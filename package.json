@@ -1,0 +1,19 @@
+{
+  "name": "rest_api_node",
+  "version": "1.0.0",
+  "description": "REST API'S con Express y TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergio-NunezP/Adm_De_Prod_FullStack.git"
+  },
+  "author": "Sergio Núñez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergio-NunezP/Adm_De_Prod_FullStack/issues"
+  },
+  "homepage": "https://github.com/Sergio-NunezP/Adm_De_Prod_FullStack#readme"
+}
