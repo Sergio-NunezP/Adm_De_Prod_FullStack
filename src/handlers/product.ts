@@ -16,6 +16,24 @@ export const getProducts = async (req: Request, res: Response) => {
     }
 }
 
+//Obtener producto por id
+export const getProductsById = async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params
+        const product = await Product.findByPk(id)
+
+        if (!product) {
+            return res.status(404).json({
+                error: 'Producto No Encontrado'
+            })
+        }
+
+        res.json({ data: product })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 
 // Crear producto
 export const createProducts = async (req: Request, res: Response) => {
