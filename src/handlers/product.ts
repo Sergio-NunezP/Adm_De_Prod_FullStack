@@ -4,16 +4,6 @@ import Product from '../models/Product.model'
 
 export const createProducts = async (req: Request, res: Response) => {
 
-    // Validación
-    await check('name')
-        .notEmpty().withMessage('El nombre de Producto no puede ir vacio')
-        .run(req)
-    await check('price')
-        .notEmpty().withMessage('Valor no válido')
-        .notEmpty().withMessage('El precio de Producto no puede ir vacio')
-        .custom(value => value > 0).withMessage('Precio no válido')
-        .run(req)
-
     // Mostrat datos
     let errors = validationResult(req)
     if (!errors.isEmpty()) {
