@@ -1,10 +1,10 @@
-import { Table, Column, Model, DataType } from 'sequelize-typescript'
+import { Table, Column, Model, DataType, Default } from 'sequelize-typescript'
 
 @Table({
     tableName: 'products'
 })
 
-class product extends Model {
+class Product extends Model {
     @Column({
         type: DataType.STRING(100)
     })
@@ -15,13 +15,12 @@ class product extends Model {
     })
     price: number
 
-    @Column({
+    @Default(true)
 
-    })
     @Column({
         type: DataType.BOOLEAN
     })
     availability: boolean
 }
 
-export default product
+export default Product
