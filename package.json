@@ -4,7 +4,8 @@
   "description": "REST API'S con Express y TypeScript",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/index.ts"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,12 @@
   "homepage": "https://github.com/Sergio-NunezP/Adm_De_Prod_FullStack#readme",
   "devDependencies": {
     "@types/express": "^4.17.20",
+    "@types/jest": "^29.5.14",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
     "nodemon": "^3.1.9",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   },
