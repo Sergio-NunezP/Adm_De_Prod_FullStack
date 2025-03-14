@@ -10,6 +10,6 @@ describe('GET / api', () => {
         expect(res.body.msg).toBe('Desde API')
 
         expect(res.status).not.toBe(404)
-        expect(res.body.msg).toBe('desde api')
+        expect(res.body.msg).not.toBe('desde api')
     })
 })
