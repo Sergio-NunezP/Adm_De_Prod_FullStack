@@ -5,6 +5,31 @@ import { handleInputErrors } from "./middleware"
 
 const router = Router()
 
+/**
+ * @swagger
+ * components:
+ *      schemas:
+ *          Product:
+ *              type: object
+ *              properties:
+ *                  id:
+ *                      type: integer
+ *                      description: The Product ID
+ *                      example: 1
+ *                  name:
+ *                      type: string
+ *                      description: The Product name
+ *                      example: SmartTv Curvo 49 pulgadas
+ *                  price:
+ *                      type: number
+ *                      description: The Product price
+ *                      example: 300
+ *                  availability:
+ *                      type: boolean
+ *                      description: The Product availability
+ *                      example: True
+ */
+
 // Routing
 
 // Obtener productos
