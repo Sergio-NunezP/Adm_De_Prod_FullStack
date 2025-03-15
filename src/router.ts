@@ -30,6 +30,28 @@ const router = Router()
  *                      example: True
  */
 
+/**
+ * @swagger
+ * /api/products:
+ *      get:
+ *          summary: Get a list of products
+ *          tags:
+ *              - Products
+ *          description: Return a list of products
+ *          responses:
+ *              200:
+ *                  description: Successful of products
+ *                  content:
+ *                      application/json:
+ *                          schema:
+ *                              type: array
+ *                              items:
+ *                                  $ref: '#/components/schemas/Product' 
+ * 
+ * 
+ */
+
+
 // Routing
 
 // Obtener productos
