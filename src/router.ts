@@ -117,7 +117,11 @@ router.get('/:id',
  *                              example: 500
  *      responses:
  *          201:
- *              description: Product created successfully
+ *             description: Successful response
+ *             content: 
+ *                  application/json:
+ *                     schema:
+ *                         $ref: '#/components/schemas/Product' 
  *          400:
  *              description: Bad Request - ivalid input data
  */
@@ -135,6 +139,51 @@ router.post('/',
     createProducts
 )
 
+
+
+/**
+ * @swagger
+ * /api/products/{id}:
+ *  put:
+ *      summary: Update a product with user input
+ *      tags:
+ *          - Products
+ *      description: Returns the update product
+ *      parameters:
+ *          - in: path
+ *            name: id
+ *            description: The ID of the product to retrieve
+ *            required: true
+ *            schema:
+ *                type: integer
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                      type: object
+ *                      properties:
+ *                          name:
+ *                              type: string
+ *                              example: "Monitor curvo de 49 pulgadas"
+ *                          price:
+ *                              type: number
+ *                              example: 500
+ *                          availability:
+ *                              type: boolean
+ *                              example: true
+ *      responses:
+ *          200:
+ *              description: Successful response
+ *              content: 
+ *                  application/json:
+ *                      schema:
+ *                          $ref: '#/components/schemas/Product' 
+ *          400:
+ *              description: Bad Request - Invalid ID or Invalid input data
+ *          404:
+ *              description: Product Not Found
+ */
 // Actualizar productos
 router.put('/:id',
 
@@ -151,12 +200,76 @@ router.put('/:id',
     updateProduct
 )
 
+
+/**
+ * @swagger
+ * /api/products/{id}:
+ *  patch:
+ *      summary: Update Product availability
+ *      tags:
+ *          - Products
+ *      description: Returns the update availability
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          description: The ID of the product to retrieve
+ *          required: true
+ *          schema:
+ *              type: integer
+ *      responses:
+ *          200:
+ *              description: Successful response
+ *              content: 
+ *                  application/json:
+ *                      schema:
+ *                          $ref: '#/components/schemas/Product' 
+ *          400:
+ *              description: Bad Request - Invalid ID
+ *          404:
+ *              description: Product Not Found
+ *        
+ * 
+ * 
+ */
 // Actualizar 
 router.patch('/:id',
     param('id').isInt().withMessage('ID no válido'),
     handleInputErrors,
     updateAvailability)
 
+
+
+/**
+ * @swagger
+ * /api/products/{id}:
+ *  delete:
+ *      summary: Delete Product 
+ *      tags:
+ *          - Products
+ *      description: Delete of product
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          description: The ID of the product to retrieve
+ *          required: true
+ *          schema:
+ *              type: integer
+ *      responses:
+ *          200:
+ *              description: Successful response
+ *              content: 
+ *                  application/json:
+ *                      schema:
+ *                          type: string
+ *                           
+ *          400:
+ *              description: Bad Request - Invalid ID
+ *          404:
+ *              description: Product Not Found
+ *        
+ * 
+ * 
+ */
 // Eliminar producto
 router.delete('/:id',
 
