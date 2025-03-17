@@ -59,12 +59,12 @@ router.get('/', getProducts)
 
 /**
  * @swagger 
- * api/products/{id}:
+ * /api/products/{id}:
  *  get:
  *      summary: Get a product by ID
  *      tags:
  *          - Products
- *      descripion: Return a product based on its unique ID
+ *      description: Return a product based on its unique ID
  *      parameters:
  *          - in: path
  *            name: id
@@ -93,6 +93,34 @@ router.get('/:id',
     getProductsById
 )
 
+
+/**
+ * @swagger 
+ * /api/products:
+ *  post:
+ *      summary: Creates a new product
+ *      tags:
+ *          - Products
+ *      description: Returns a new record in the database
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                      type: object
+ *                      properties:
+ *                          name:
+ *                              type: string
+ *                              example: "Monitor curvo de 49 pulgadas"
+ *                          price:
+ *                              type: number
+ *                              example: 500
+ *      responses:
+ *          201:
+ *              description: Product created successfully
+ *          400:
+ *              description: Bad Request - ivalid input data
+ */
 // Crear un producto
 router.post('/',
 
