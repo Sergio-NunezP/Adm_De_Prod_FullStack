@@ -243,14 +243,14 @@ router.patch('/:id',
  * @swagger
  * /api/products/{id}:
  *  delete:
- *      summary: Delete Product 
+ *      summary: Deletes a product by a given ID
  *      tags:
  *          - Products
- *      description: Delete of product
+ *      description: Returns a confirmation message
  *      parameters:
  *        - in: path
  *          name: id
- *          description: The ID of the product to retrieve
+ *          description: The ID of the product to delete
  *          required: true
  *          schema:
  *              type: integer
@@ -261,6 +261,7 @@ router.patch('/:id',
  *                  application/json:
  *                      schema:
  *                          type: string
+ *                          value: 'Producto Eliminado
  *                           
  *          400:
  *              description: Bad Request - Invalid ID
