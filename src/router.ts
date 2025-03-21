@@ -261,7 +261,7 @@ router.patch('/:id',
  *                  application/json:
  *                      schema:
  *                          type: string
- *                          value: 'Producto Eliminado
+ *                          value: 'Producto Eliminado'
  *                           
  *          400:
  *              description: Bad Request - Invalid ID
